@@ -30,10 +30,10 @@ public class Session {
 
     @OneToMany
     @ToString.Exclude
-    @JoinTable(
-            name = "session_tags",
-            joinColumns = @JoinColumn(name = "session_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+//    @JoinTable(
+//            name = "session_tags",
+//            joinColumns = @JoinColumn(name = "session_id"),
+//            inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private Set<Tag> tags;
 
     @ManyToOne

@@ -62,7 +62,7 @@ public class DataLoaderCommandLineRunner implements CommandLineRunner {
                     .title(faker.book().title())
                     .description(faker.lorem().paragraph())
                     .level(Level.values()[faker.number().numberBetween(0, Level.values().length)])
-                    .tags(new HashSet<>(tagRepository.findAll()))
+//                    .tags(new HashSet<>(tagRepository.findAll()))
                     .event(event)
                     .build());
         }

@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     //SCALARS - GRAPHQL
     implementation 'com.graphql-java:graphql-java-extended-scalars:20.0'
+    //DATA-FAKER - GERADOR DADOS
     implementation 'net.datafaker:datafaker:2.3.0'
 
     compileOnly 'org.projectlombok:lombok'

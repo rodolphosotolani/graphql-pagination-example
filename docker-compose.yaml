@@ -1,42 +1,9 @@
-version: '3'
-
 services:
   postgres:
     image: postgres:latest
-    container_name: graphql_postgres
-    shm_size: 1g
-    restart: always
     environment:
-      POSTGRES_DB: swiftpayDB
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      PGDATA: /var/lib/postgresql/data
-      TS_TUNE_MAX_CONNS: 100
-    volumes:
-      - ./data:/var/lib/postgresql/data
+      - 'POSTGRES_DB=graphql_event_db'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_USER=postgres'
     ports:
-      - "5432:5432"
-    networks:
-      - graphql-network
-
-  pgadmin4:
-    image: elestio/pgadmin:latest
-    container_name: graphql_pgadmin
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@swiftpay.com.br
-      PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_LISTEN_PORT: 8080
-    depends_on:
-      - postgres
-    ports:
-      - "9080:8080"
-    volumes:
-      - ./servers.json:/pgadmin4/servers.json
-      - ./pgadmin:/var/lib/pgadmin
-    networks:
-      - graphql-network
-
-networks:
-  graphql-network:
-    driver: bridge
+      - '5432'
