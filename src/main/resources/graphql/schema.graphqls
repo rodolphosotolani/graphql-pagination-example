@@ -18,9 +18,9 @@ type Event {
     endDate: Date!
     cfpStartDate: Date!
     cfpEndDate: Date!
-    localtion: String!
-    website: Url
-    sessions: [Session]
+    location: String!
+    website: String!
+    sessions(first:Int, after:String, last:Int, before:String): SessionConnection
 }
 
 type Session {
